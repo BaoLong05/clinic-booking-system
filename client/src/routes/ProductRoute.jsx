@@ -5,10 +5,9 @@ import Cart from "../pages/Cart/cart";
 import AdminLayout from "../pages/Admin/AdminLayout";
 import AdminProducts from "../pages/Admin/AdminProducts";
 
+import ProductDetails from '../pages/ProductDetail/ProductDetail';
 const ProductRoute = {
 
-import ProductDetails from '../pages/ProductDetail/ProductDetail';
-const ProductRoute = {  
 
   path: "/",
   children: [
@@ -34,9 +33,6 @@ const ProductRoute = {
     {
         path: "*",
         element:<NotFound/>
-
-      path: "/Cart",
-      element: <Cart/>
     },
     {
       path: "/product/:id",

@@ -76,7 +76,7 @@ class ProductsController extends Controller
             'stock' => 'required|integer|min:0',
             'material' => 'nullable|string',
             'weight' => 'nullable|numeric|min:0',
-            'category_id' => 'required|exists:categories,id',
+            'category_id' => 'nullable|exists:categories,id',
             'images.*' => 'image|mimes:jpeg,png,jpg,gif|max:5120'
         ]);
 
@@ -129,7 +129,7 @@ class ProductsController extends Controller
                 'stock' => 'required|integer|min:0',
                 'material' => 'nullable|string',
                 'weight' => 'nullable|numeric|min:0',
-                'category_id' => 'required|exists:categories,id',
+                'category_id' => 'nullable|exists:categories,id',
                 'images.*' => 'image|mimes:jpeg,png,jpg,gif|max:5120'
             ]);
         } catch (\Illuminate\Validation\ValidationException $e) {
