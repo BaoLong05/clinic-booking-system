@@ -38,13 +38,18 @@ const Login = () => {
       toast.success(res.message);
       console.log("User:", res.data);
       
-      // Lưu token vào localStorage
-      if (res.data && res.data.token) {
-        localStorage.setItem('auth_token', res.data.token);
+      // Lưu user data vào localStorage
+      if (res.data) {
+        localStorage.setItem('user', JSON.stringify(res.data));
+        localStorage.setItem('token', 'authenticated'); // Flag for authentication
       }
       
-      // Chuyển hướng đến trang Home
-      navigate('/');
+      // Redirect based on user role
+      if (res.data && res.data.role === 'admin') {
+        navigate('/admin/products');
+      } else {
+        navigate('/');
+      }
       
     } catch (error) {
       if (error.response) {
