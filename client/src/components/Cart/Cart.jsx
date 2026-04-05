@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { getCart, addToCart, updateCartItem, removeFromCart, clearCart } from "../../utils/helper";
 import "./Cart.css";
 
 const Cart = () => {
+  const navigate = useNavigate();
   const [cart, setCart] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -261,7 +263,7 @@ const Cart = () => {
                     {formatPrice(calculateTotal())}
                   </span>
                 </div>
-                <button className="btn btn-primary btn-checkout">
+                <button className="btn btn-primary btn-checkout" onClick={() => navigate('/checkout')}>
                   THANH TOÁN
                 </button>
                 <button

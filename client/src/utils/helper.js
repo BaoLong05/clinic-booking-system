@@ -184,3 +184,28 @@ export const clearCart = async () => {
   const res = await axios.post(apiUrl("cart/clear"));
   return res.data;
 };
+
+// ============== ORDERS - Đơn hàng =============
+// 1. Tạo đơn hàng từ giỏ hàng
+export const createOrder = async (data) => {
+  const res = await axios.post(apiUrl("orders"), data);
+  return res.data;
+};
+
+// 2. Lấy danh sách đơn hàng của user
+export const getOrders = async () => {
+  const res = await axios.get(apiUrl("orders"));
+  return res.data;
+};
+
+// 3. Lấy chi tiết đơn hàng
+export const getOrderById = async (id) => {
+  const res = await axios.get(apiUrl(`orders/${id}`));
+  return res.data;
+};
+
+// 4. Cập nhật trạng thái đơn hàng (admin)
+export const updateOrderStatus = async (id, status) => {
+  const res = await axios.put(apiUrl(`orders/${id}/status`), { status });
+  return res.data;
+};
