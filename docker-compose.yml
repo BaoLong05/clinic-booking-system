@@ -6,7 +6,7 @@ services:
     container_name: project-mysql
     environment:
       MYSQL_ROOT_PASSWORD: 1234
-      MYSQL_DATABASE: building_a_material_management_system_tdc
+      MYSQL_DATABASE: e_commerce_system_selling_jewelry
     ports:
       - "3306:3306"
     volumes:

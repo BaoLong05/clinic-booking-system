@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Search from "../Search/search";
+import Search from "../Search/Search";
 import "./Header.css";
 
 const Header = ({ onSearch }) => {

@@ -6,6 +6,7 @@ use App\Http\Controllers\Api\ProductsController;
 use App\Http\Controllers\Api\CartsController;
 use App\Http\Controllers\Api\CategoriesController;
 use App\Http\Controllers\Api\ProductDetailsController;
+use App\Http\Controllers\Api\OrdersController;
 
 
 
@@ -49,4 +50,12 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::put('/cart/items/{id}', [CartsController::class, 'update_cart_item']);
     Route::delete('/cart/items/{id}', [CartsController::class, 'remove_from_cart']);
     Route::post('/cart/clear', [CartsController::class, 'clear_cart']);
+});
+
+//orders - requires authentication
+Route::middleware('auth:sanctum')->group(function () {
+    Route::post('/orders', [OrdersController::class, 'create_order']);
+    Route::get('/orders', [OrdersController::class, 'get_orders']);
+    Route::get('/orders/{id}', [OrdersController::class, 'get_order']);
+    Route::put('/orders/{id}/status', [OrdersController::class, 'update_order_status']);
 });

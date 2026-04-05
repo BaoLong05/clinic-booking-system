@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { toast } from "react-toastify";
-import Header from "../../components/Header/header";
-import Footer from "../../components/Footer/footer";
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
 import { getProductById, getRelatedProducts, addToCart, BASE_URL } from "../../utils/helper";
 import "./ProductDetail.css";
 

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
-import Header from "../../components/Header/header";
-import Footer from "../../components/Footer/footer";
-import "./home.css";
+import "./Home.css";
 import { getProducts, BASE_URL, addToCart } from "../../utils/helper";
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
 
 const Home = () => {
   const navigate = useNavigate();
